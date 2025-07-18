@@ -5,9 +5,6 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './button.component.html',
-  styleUrl: './button.component.css'
+  styleUrl: './button.component.css',
 })
-export class ButtonComponent {
-  @Input({ required: true }) label!: string;
-  @Input({ required: true }) icon!: string;
-}
+export class ButtonComponent {}
