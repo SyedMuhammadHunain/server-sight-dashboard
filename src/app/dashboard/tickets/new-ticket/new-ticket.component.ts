@@ -12,11 +12,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './new-ticket.component.css',
 })
 export class NewTicketComponent {
-  add = output<{ title: string, request: string }>();
+  enteredTitle: string = '';
+  enteredRequest: string = '';
 
-  onSubmit(title: string, request: string, form: HTMLFormElement) {
-    this.add.emit({ title: title, request: request });
-    
+  add = output<{ title: string; request: string }>();
+
+  onSubmit(form: HTMLFormElement) {
+    this.add.emit({ title: this.enteredTitle, request: this.enteredRequest });
+
     form.reset();
   }
 }
